@@ -1,14 +1,21 @@
-import './index.css';
+// CORE REACT IMPORTS --------------------------------
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Main from './apps/main/main';
-// import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
+// LOCAL APP IMPORTS ---------------------------------
+import './index.css';
+
+// DEFAULT APP LAYOUT --------------------------------
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );
 
-// reportWebVitals(console.log);
+// Do not unregister the service worker
+serviceWorkerRegistration.register();
+
+// TODO: add an api end point to recieve and record performance data
+reportWebVitals();
